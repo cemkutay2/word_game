@@ -35,7 +35,7 @@ int main()
         do
         {
             // clear screen
-            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             printf(wrongGuess ? "Wrong guess! Guess again:\n" : "Guess:\n");
             wrongGuess = false;
             char userGuess[100];
