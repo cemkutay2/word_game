@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include <locale.h>
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
-#include <unistd.h>
 
 int main()
 {
