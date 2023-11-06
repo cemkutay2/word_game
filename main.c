@@ -12,8 +12,7 @@ int main()
         const char *words[] = {"cat", "dog", "house", "tree", "flower", "car", "bird", "fish", "apple", "orange", "banana", "grape", "strawberry", "blueberry", "lemon", "lime", "watermelon", "sun", "moon", "star", "rain", "snow"};
 
         // rng
-        time_t t;
-        srand((unsigned)time(&t));
+        srand(time(NULL));
         int randNum = (rand() % (sizeof(words) / sizeof(words[0])));
 
         // get a random word from the words array
