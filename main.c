@@ -9,7 +9,7 @@ int main()
     bool running = true;
     do{
         char playAgain;
-        const char *words[] = {"cat", "dog", "house", "tree", "flower", "car", "bird", "fish", "apple", "orange", "banana", "grape", "strawberry", "blueberry", "lemon", "lime", "watermelon", "sun", "moon", "star", "rain", "snow"};
+        const char *words[] = {"cat", "dog", "house", "tree", "flower", "car", "bird", "fish", "apple", "orange", "banana", "grape", "strawberry", "blueberry", "lemon", "lime", "watermelon", "sun", "moon", "star", "rain", "snow", "baby", "bed", "book", "chair", "cloud", "coffee", "computer", "door", "elephant", "eye", "family", "friend", "game", "girl", "hat", "ice cream", "jacket", "kangaroo", "kitchen", "knife", "leaf", "lion", "milk", "monkey", "mother", "mountain", "music", "night", "nose", "ocean", "pencil", "phone", "plant", "pizza", "rainbow", "river", "road", "rock", "school", "sea", "shirt", "shoe", "sky", "sofa", "spoon", "squirrel", "table", "teacher", "train", "TV", "umbrella", "water", "weather", "wind", "window", "zebra"};
 
         // rng
         srand(time(NULL));
