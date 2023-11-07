@@ -7,7 +7,8 @@
 int main()
 {
     bool running = true;
-    do{
+    do
+    {
         char playAgain;
         const char *words[] = {"cat", "dog", "house", "tree", "flower", "car", "bird", "fish", "apple", "orange", "banana", "grape", "strawberry", "blueberry", "lemon", "lime", "watermelon", "sun", "moon", "star", "rain", "snow", "baby", "bed", "book", "chair", "cloud", "coffee", "computer", "door", "elephant", "eye", "family", "friend", "game", "girl", "hat", "ice cream", "jacket", "kangaroo", "kitchen", "knife", "leaf", "lion", "milk", "monkey", "mother", "mountain", "music", "night", "nose", "ocean", "pencil", "phone", "plant", "pizza", "rainbow", "river", "road", "rock", "school", "sea", "shirt", "shoe", "sky", "sofa", "spoon", "squirrel", "table", "teacher", "train", "TV", "umbrella", "water", "weather", "wind", "window", "zebra"};
 
@@ -19,7 +20,7 @@ int main()
         const char *tempChar = words[randNum];
         char randWord[50];
         strcpy(randWord, tempChar);
-        
+
         // create wordSpace array
         int wordLength = strlen(randWord);
         char wordSpace[wordLength];
@@ -31,15 +32,17 @@ int main()
         // game loop
         bool wordIsFound = false;
         bool wrongGuess = false;
+        bool userExit = false;
         do
         {
             // clear screen
-            printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            printf("\033[2J");
+            
             printf(wrongGuess ? "Wrong guess! Guess again:\n" : "Guess:\n");
             wrongGuess = false;
             char userGuess[100];
 
-            // print out the main array
+            // print out wordSpace
             for (int i = 0; i < wordLength; i++)
                 printf("%c ", wordSpace[i]);
 
@@ -49,7 +52,13 @@ int main()
 
             int inputLength = strlen(userGuess);
             char currentLetter = userGuess[0];
-            
+            // user exit
+            if (strcmp(userGuess, "exit") == 0)
+            {
+                userExit = true;
+                continue;
+            }
+
             // if word is found end loop
             if (strcmp(userGuess, randWord) == 0)
             {
@@ -67,12 +76,20 @@ int main()
                 if (currentLetter == randWord[i])
                     wordSpace[i] = currentLetter;
             }
-        } while (!wordIsFound);
-
-        printf("Congrats! The word was: %s!\n",randWord);
-        printf("\nDo you want to play again? (y/n)\n");
-        scanf(" %c", &playAgain);
-        running = playAgain == 'y' ? true : false;
+        } while (!wordIsFound && !userExit);
+        if (!userExit)
+        {
+            printf("Congrats! The word was: %s!\n", randWord);
+            printf("\nDo you want to play again? (y/n)\n");
+            scanf(" %c", &playAgain);
+            running = playAgain == 'y' ? true : false;
+        }
+        else
+        {
+            printf("Do you want to quit? (y/n)\n");
+            scanf(" %c", &playAgain);
+            running = playAgain == 'y' ? false : true;
+        }
     } while (running);
     return 0;
 }
