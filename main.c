@@ -10,7 +10,7 @@ int main()
     do
     {
         char playAgain;
-        const char *words[] = {"cat", "dog", "house", "tree", "flower", "car", "bird", "fish", "apple", "orange", "banana", "grape", "strawberry", "blueberry", "lemon", "lime", "watermelon", "sun", "moon", "star", "rain", "snow", "baby", "bed", "book", "chair", "cloud", "coffee", "computer", "door", "elephant", "eye", "family", "friend", "game", "girl", "hat", "ice cream", "jacket", "kangaroo", "kitchen", "knife", "leaf", "lion", "milk", "monkey", "mother", "mountain", "music", "night", "nose", "ocean", "pencil", "phone", "plant", "pizza", "rainbow", "river", "road", "rock", "school", "sea", "shirt", "shoe", "sky", "sofa", "spoon", "squirrel", "table", "teacher", "train", "TV", "umbrella", "water", "weather", "wind", "window", "zebra"};
+        const char words[][15] = {"cat", "dog", "house", "tree", "flower", "car", "bird", "fish", "apple", "orange", "banana", "grape", "strawberry", "blueberry", "lemon", "lime", "watermelon", "sun", "moon", "star", "rain", "snow", "baby", "bed", "book", "chair", "cloud", "coffee", "computer", "door", "elephant", "eye", "family", "friend", "game", "girl", "hat", "ice cream", "jacket", "kangaroo", "kitchen", "knife", "leaf", "lion", "milk", "monkey", "mother", "mountain", "music", "night", "nose", "ocean", "pencil", "phone", "plant", "pizza", "rainbow", "river", "road", "rock", "school", "sea", "shirt", "shoe", "sky", "sofa", "spoon", "squirrel", "table", "teacher", "train", "TV", "umbrella", "water", "weather", "wind", "window", "zebra"};
 
         // rng
         srand(time(NULL));
@@ -18,7 +18,7 @@ int main()
 
         // get a random word from the words array
         const char *tempChar = words[randNum];
-        char randWord[50];
+        char randWord[15];
         strcpy(randWord, tempChar);
 
         // create wordSpace array
@@ -48,7 +48,7 @@ int main()
 
             // take a guess
             printf("\n\n");
-            scanf("%s", &userGuess[0]);
+            scanf("%s", userGuess);
 
             int inputLength = strlen(userGuess);
             char currentLetter = userGuess[0];
