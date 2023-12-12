@@ -40,7 +40,7 @@ int main()
             
             printf(wrongGuess ? "Wrong guess! Guess again:\n" : "Guess:\n");
             wrongGuess = false;
-            char userGuess[100];
+            char userGuess[15];
 
             // print out wordSpace
             for (int i = 0; i < wordLength; i++)
